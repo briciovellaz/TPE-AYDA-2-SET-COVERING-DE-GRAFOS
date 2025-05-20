@@ -16,7 +16,7 @@ int main()
 	Grafo<int> grafo;
 
 	for(int i=1;i<13;i++){          //Ejemplo
-        grafo.agregar_vertice(i);
+        	grafo.agregar_vertice(i);
 	}
 
 	grafo.agregar_arco(1,2,0);  //Ciudad ejemplo TPE3 A
@@ -35,7 +35,7 @@ int main()
 	grafo.agregar_arco(5,10,0);
 	grafo.agregar_arco(6,11,0);
 	grafo.agregar_arco(6,8,0);
-    grafo.agregar_arco(7,8,0);
+    	grafo.agregar_arco(7,8,0);
 	grafo.agregar_arco(7,12,0);
 	grafo.agregar_arco(8,12,0);
 	grafo.agregar_arco(8,9,0);
@@ -58,10 +58,10 @@ void OrdenarDec(vector<pair<int,int>> &lista){
 }
 
 void ActualizarAdyacentes(vector<pair<int,int>> &barrios,Grafo<int> grafo,list<int> vertices){ //O(v^2)
-            for(auto it=vertices.begin();it!=vertices.end();it++){
-                barrios.push_back(make_pair(*it,grafo.cantidad_adyacentes(*it))); //O(v)
-            }
-            OrdenarDec(barrios);
+	for(auto it=vertices.begin();it!=vertices.end();it++){
+	        barrios.push_back(make_pair(*it,grafo.cantidad_adyacentes(*it))); //O(v)
+	}
+        OrdenarDec(barrios);
 }
 
 
@@ -75,7 +75,7 @@ void CoberturaBomberos(Grafo<int> grafo){
     ActualizarAdyacentes(barrios,grafo,vertices);
 
     auto it=barrios.begin();
-    while(!barrios.empty()){    //Agrega el vertice con mas cantidad de vecinos sin cubrir a la solución en cada iteracion.
+    while(!barrios.empty()){    //Agrega el vertice con mas cantidad de vecinos sin cubrir a la soluciÃ³n en cada iteracion.
 
         solucion.push_back(it->first);
         vertices.remove(it->first);
